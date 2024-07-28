@@ -16,12 +16,14 @@ public class FindAll {
     }
 
     public static int[] findAll(int[] arr, int x) {
-        int[] arrNew = new int[arr.length];
+        int[] result = new int[arr.length];
+        int j = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == x) {
-                arrNew[i] = i;
+                result[j] = i;
+                j++;
             }
         }
-        return arrNew;
+        return result;
     }
 }
