@@ -12,17 +12,17 @@ package ru.stepup.study1;
 
 public class EqualNumber {
     public static void main(String[] args) {
-        Boolean result = equalNum(1111111);
+        Boolean result = equalNum(77777);
         System.out.println(result);
     }
 
     public static boolean equalNum(int x) {
-        int[] arr = new int[x];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = x % 10;
+        int count = 0;;
+        for (int i = 0; i < x; i++) {
+            count = x % 10;
             x /= 10;
         }
-        if (arr[0] == arr[1] && arr[1] == arr[2] && arr[2] == arr[3] && arr[3] == arr[0]) {
+        if (count == x) {
             return true;
         }
         return false;
