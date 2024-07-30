@@ -13,9 +13,11 @@ public class TwoAdded {
     public static int[] add(int[] arr, int[] ins, int pos) {
         int[] tmp = new int[arr.length + ins.length];
         for (int i = 0; i < arr.length; i++) {
-            /*if (i < pos) tmp[i] = arr[i];
-            else if (i == pos) tmp[i] =;
-            else tmp[i] = arr[i - 1];*/
+            if (i < pos) tmp[i] = arr[i];
+            else if (i == pos) {
+                tmp[i] = arr[i];
+                tmp[i] = ins[arr[i]];
+            }
             tmp[i] = arr[i];
         }
         int j = arr.length;
