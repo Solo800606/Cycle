@@ -24,6 +24,22 @@ public class TwoAdded {
         return tmp;
     }
 }
+//Вариант 3
+/*int[] tmp = new int[arr.length + ins.length];
+        for (int i = 0; i < arr.length; i++) {
+        if (i < pos) tmp[i] = arr[i];
+        else if (i == pos) {
+        for (int j = 0; j < ins.length; j++) {
+tmp[i++] = ins[j];
+        }
+        continue;
+        }
+tmp[i] = arr[i];
+        }
+        for (int i = arr.length - 1; i >= ins.length; i--) {
+tmp[tmp.length - 1] = arr[i];
+        }
+        return tmp;*/
 
 ///Вариант 2
 /*int[] tmp = new int[arr.length + ins.length];
