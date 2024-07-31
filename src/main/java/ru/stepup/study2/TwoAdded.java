@@ -12,19 +12,36 @@ public class TwoAdded {
 
     public static int[] add(int[] arr, int[] ins, int pos) {
         int[] tmp = new int[arr.length + ins.length];
-        for (int i = 0; i < arr.length; i++) {
-            if (i < pos) tmp[i] = arr[i];
-            else if (i == pos) {
-                tmp[i] = arr[i];
-                tmp[i] = ins[arr[i]];
+        for (int i = 0; i < tmp.length; i++) {
+            if (i < pos) {
+                tmp[i] = arr[i]; // "Заполняем" элемент tmp[i] значением из arr[i].
+            } else if (i < pos + ins.length) {
+                tmp[i] = ins[i - pos]; // "Вставляем" элементы из массива ins
+            } else {
+                tmp[i] = arr[i - ins.length]; // Продолжаем "копировать" оставшиеся элементы из arr
             }
-            tmp[i] = arr[i];
-        }
-        int j = arr.length;
-        for (int i = 0; i < ins.length; i++) {
-            tmp[j++] = ins[i];
         }
         return tmp;
     }
 }
 
+///Вариант 2
+/*int[] tmp = new int[arr.length + ins.length];
+        for (int i = 0; i < arr.length; i++) {
+        if (i < pos) tmp[i] = arr[i];
+        else if (i == pos) {
+        for (int j = 0; j < ins.length; j++) {
+tmp[i++] = ins[j];
+        }
+        continue;
+        }
+tmp[i] = arr[i];
+        }
+        return tmp;
+    }*/
+///Вариант 1
+  /*else if (i == pos) {
+tmp[i] = ins[i];
+        }
+tmp[i] = arr[i];
+        }*/
